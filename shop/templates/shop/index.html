@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap5 %}
+
+{% block stylesheet %}
+{% static 'styles/shop_index.css' %}
+{% endblock %}
+
+{% block content %}
+<a href="{% url 'cups' %}">
+  <div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="{% static 'images/site_images/CupShop.jpg' %}" alt="Card image cap">
+    <div class="card-body">
+      <h2 class="card-text">Cups</h2>
+    </div>
+  </div>
+</a>
+<a href="{% url 'decorations' %}">
+  <div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="{% static 'images/site_images/DecorationShop.jpg' %}" alt="Card image cap">
+    <div class="card-body">
+      <h2 class="card-text">Decorations</h2>
+    </div>
+  </div>
+</a>
+<a href="#">
+  <div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="{% static 'images/site_images/WallenFront.jpe g' %}" alt="Card image cap">
+    <div class="card-body">
+      <h2 class="card-text">Shirts</h2>
+    </div>
+  </div>
+</a>
+
+{% endblock %}

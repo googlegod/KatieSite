@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap5 %}
+
+{% block stylesheet %}
+{% static 'styles/index.css' %}
+{% endblock %}
+
+{% block content %}
+<div id="carousel" class="carousel slide " data-ride="carousel" style="width: 300;">
+  <div class="carousel-inner" >
+    <div class="carousel-item active w-300">
+      <img class="d-block" src="{{ first.image.url }}" alt="First slide">
+    </div>
+    {% for image in images %}
+      {% if image.pk is not first.pk %}
+      <div class="carousel-item w-300">
+        <img class="d-block" src="{{ image.image.url }}" alt="Second slide">
+      </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+  <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+<div id="aboutUsContainer">
+  <h2>About Us</h2>
+  <p id="aboutUs">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+    aliqua. Faucibus scelerisque eleifend donec pretium vulputate sapien. Elit ullamcorper dignissim cras tincidunt
+    lobortis feugiat. Arcu odio ut sem nulla pharetra. Feugiat sed lectus vestibulum mattis ullamcorper. Feugiat in
+    fermentum posuere urna nec tincidunt. Non odio euismod lacinia at. Posuere lorem ipsum dolor sit amet consectetur
+    adipiscing elit duis. Nisl nunc mi ipsum faucibus vitae aliquet. Vel pretium lectus quam id leo.
+    <br><br>
+    Ac auctor augue mauris augue neque. Aliquet porttitor lacus luctus accumsan tortor posuere ac ut. Vestibulum sed
+    arcu non odio euismod. Facilisis magna etiam tempor orci eu lobortis elementum. Eget nullam non nisi est sit amet.
+    Sapien eget mi proin sed libero enim sed faucibus. Ornare arcu dui vivamus arcu felis bibendum ut tristique et.
+    Condimentum lacinia quis vel eros donec ac odio tempor orci. Ornare lectus sit amet est placerat in. Libero nunc
+    consequat interdum varius sit.
+    <br><br>
+    Eget nullam non nisi est sit amet facilisis magna etiam. Sagittis aliquam malesuada bibendum arcu vitae elementum.
+    Luctus accumsan tortor posuere ac. Egestas pretium aenean pharetra magna ac placerat vestibulum. Arcu cursus vitae
+    congue mauris. Sit amet luctus venenatis lectus magna fringilla urna porttitor. Sit amet consectetur adipiscing
+    elit duis tristique sollicitudin nibh sit. Phasellus vestibulum lorem sed risus ultricies. At urna condimentum
+    mattis pellentesque id nibh. Ipsum consequat nisl vel pretium lectus quam. Scelerisque varius morbi enim nunc
+    faucibus. Consectetur a erat nam at lectus urna duis convallis convallis. Egestas pretium aenean pharetra magna ac
+    placerat. Nunc non blandit massa enim nec dui nunc mattis enim. Aliquam etiam erat velit scelerisque in dictum non
+    consectetur. Lorem ipsum dolor sit amet consectetur adipiscing elit. Ullamcorper sit amet risus nullam eget felis
+    eget nunc lobortis. Sed felis eget velit aliquet. Aliquam etiam erat velit scelerisque in dictum non consectetur.
+    Aliquet sagittis id consectetur purus.
+  </p>
+</div>
+{% endblock %}
